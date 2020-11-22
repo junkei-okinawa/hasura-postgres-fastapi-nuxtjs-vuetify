@@ -9,7 +9,7 @@ docker-compose & Dockerfile template.
 
 ## Usage
 ```docker-compose
-docker-compose up
+docker-compose up -d
 ```
 It may take up to 10 minutes to start up the first time
  - database UI(hasura) → http://localhost:8080
@@ -38,7 +38,7 @@ bash Delete_Nuxt_Project.hs
  ```
 ### 3. Create a Nuxt project
  ```docker-compose
- docker-compose up
+ docker-compose up -d
  docker-compose exec front yarn create nuxt-app app # Answer some questions for creating the Nuxt Project
  docker-compose exec front mv -rf app/* ./ && rm app
  ```
@@ -59,7 +59,7 @@ bash Delete_Nuxt_Project.hs
  ```
 
  ```docker-compose
- docker-compose up
+ docker-compose up -d
  ```
  - hasura → http://localhost:8080
  - front(Vuetify) → http://localhost:8888
