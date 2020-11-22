@@ -1,0 +1,1 @@
+ls -a front| grep -v -E 'Dockerfile' | xargs rm -rf
