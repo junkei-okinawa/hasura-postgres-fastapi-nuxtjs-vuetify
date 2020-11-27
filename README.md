@@ -50,7 +50,7 @@ export default {
 
 #### 3.
 ```docker-compose
-docker-compose up
+docker-compose up -d
 ```
  - database UI(hasura) → http://localhost:8080
  - frontend UI(Vuetify) → http://localhost:8888
@@ -76,6 +76,7 @@ bash Delete_Nuxt_Project.sh
  # RUN yarn install && yarn run build
  # CMD exec yarn run dev
  ```
+
 ### 3.
 Repeat steps 1 to 3 same as the first time
 
