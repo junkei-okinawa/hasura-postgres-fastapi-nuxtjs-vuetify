@@ -1,1 +1,1 @@
-ls -a front| grep -v -E 'Dockerfile' | xargs rm -rf
+find ./front -not -name 'Dockerfile' -a -not -name 'front' -maxdepth 1 | xargs -I {} rm -rf {}
