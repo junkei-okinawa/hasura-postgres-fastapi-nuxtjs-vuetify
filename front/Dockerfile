@@ -26,7 +26,7 @@ WORKDIR ${HOME}
 # install vim & curl & setting TIMEZONE
 RUN apt update && apt-get update && \
     apt install vim -y && \
-    apt-get -y  --no-install-recommends install curl zsh sudo wget g++ build-essential && \
+    apt-get -y --no-install-recommends install curl zsh sudo wget g++ build-essential net-tools && \
     apt-get install --no-install-recommends tzdata && dpkg-reconfigure tzdata && dpkg-reconfigure tzdata && \
     apt-get clean
 
@@ -55,7 +55,7 @@ RUN curl -L --compressed "https://yarnpkg.com/downloads/$YARN_VERSION/yarn-v$YAR
 ### 初回はこの部分をコメントアウトして実行後、 ###
 ### 以下のコマンドを実行する　参考｜https://blog.cloud-acct.com/posts/u-docker-create-nuxtjs/
 ### docker-compose exec front yarn create nuxt-app app # nuxtプロジェクトを作成（対話型でいくつか質問が入るので、参考URLを見て回答）
-### find ./front/app -not -name 'Dockerfile' -maxdepth 1 | xargs -I {} mv -f {} ./front ; rm -d ./front/app # app内のmodule郡を1つ上の階層に移動しappフォルダを削除
+### find ./app/app -not -name 'Dockerfile' -maxdepth 1 | xargs -I {} mv -f {} ./front ; rm -d ./front/app # app内のmodule郡を1つ上の階層に移動しappフォルダを削除
 ### front/nuxt.config.jsの「」の次の行に以下のコードを追記
 ### server: {
 ###     port: 8888, // デフォルト: 3000

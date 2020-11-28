@@ -3,13 +3,13 @@ FROM ubuntu:20.04
 # install vim & curl
 RUN apt update && apt-get update && \
     apt install vim -y && \
-    apt-get install -y --no-install-recommends curl zsh sudo wget
+    apt-get install -y --no-install-recommends curl zsh sudo wget net-tools
 
 # install git & pip
-RUN printf '6\n79\n' | apt install -y software-properties-common dirmngr gnupg-agent && \
+RUN printf '6\n79\n' | apt install software-properties-common dirmngr gnupg-agent -y && \
     printf '\n' | add-apt-repository ppa:git-core/ppa && \
     apt update && \
-    apt install -y git python3-pip
+    apt install git python3-pip -y
 
 # install psql
 # RUN apt update && apt install postgresql postgresql-contrib
