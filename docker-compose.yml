@@ -13,7 +13,7 @@ services:
   graphql-engine:
     image: hasura/graphql-engine:v1.3.2
     ports:
-      - "${IP}:${HASURA_PORT}:${HASURA_PORT}"
+      - ${HASURA_PORT}:${HASURA_PORT}"
     depends_on:
       - "postgres"
     restart: always
@@ -36,7 +36,7 @@ services:
       context: ./front
       dockerfile: Dockerfile
     ports:
-      - "${IP}:${FRONT_PORT}:${FRONT_PORT}"
+      - ${FRONT_PORT}:${FRONT_PORT}
     environment:
       SCHEMA: $SCHEMA
       POSTGRES_PASSWORD: $POSTGRES_PASSWORD
@@ -53,7 +53,7 @@ services:
       context: ./api
       dockerfile: Dockerfile
     ports:
-      - "${IP}:${API_PORT}:${API_PORT}"
+      - ${API_PORT}:${API_PORT}
     environment:
       SCHEMA: $SCHEMA
       POSTGRES_PASSWORD: $POSTGRES_PASSWORD
